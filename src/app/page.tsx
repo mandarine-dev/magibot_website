@@ -173,7 +173,7 @@ export default function Home() {
                 The solution to your problems
               </p>
               <p className="pt-2 text-4xl leading-8 text-zinc-100 cairo">
-                MAGIBOT FEATURES
+                MAGIBOT TOP FEATURES
               </p>
               <p className="pt-6 w-2/3 text-base leading-8 text-zinc-100 ">
                 MagiBot performs a wide range of automated tasks across
@@ -181,21 +181,42 @@ export default function Home() {
                 range of automated tasks across different protocols on supported
                 chains
               </p>
-              <div className="w-full flex justify-evenly items-center">
-                <div>
-                  <div className="h-24 w-24 mt-32 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200"></div>
-                  <p className="text-lg pt-4 pb-2 text-white">1st feature</p>
-                  <p className="text-sm text-white">feature desc</p>
+              <div className="w-full flex flex-wrap justify-evenly items-center h-96">
+                <div className="flex  flex-col justify-center items-center w-56">
+                  <div className="flex justify-center items-center h-24 w-24 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200">
+                    <p className="cairo text-white text-3xl">#1</p>
+                  </div>
+                  <p className="text-lg pt-4 pb-2 text-white">
+                    Private interchain network
+                  </p>
+                  <p className="text-sm text-white">
+                    We assure our users that their information is safe, and no
+                    personal data related to transactions is stored
+                  </p>
                 </div>
-                <div>
-                  <div className="h-24 w-24 mt-32 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200"></div>
-                  <p className="text-lg pt-4 pb-2 text-white">1st feature</p>
-                  <p className="text-sm text-white">feature desc</p>
+                <div className="flex flex-col justify-center items-center w-56">
+                  <div className="flex justify-center items-center h-24 w-24 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200">
+                    <p className="cairo text-white text-3xl">#2</p>
+                  </div>
+                  <p className="text-lg pt-4 pb-2 text-white">
+                    User friendly interface
+                  </p>
+                  <p className="text-sm text-white">
+                    Our bot is designed with simplicity and user experience in
+                    mind - all you need is a Telegram account
+                  </p>
                 </div>
-                <div>
-                  <div className="h-24 w-24ouais mt-32 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200"></div>
-                  <p className="text-lg pt-4 pb-2 text-white">1st feature</p>
-                  <p className="text-sm text-white">feature desc</p>
+                <div className="flex flex-col justify-center items-center w-56">
+                  <div className="flex justify-center items-center h-24 w-24 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200">
+                    <p className="cairo text-white text-3xl">#3</p>
+                  </div>
+                  <p className="text-lg pt-4 pb-2 text-white">
+                    Accessible anywhere
+                  </p>
+                  <p className="text-sm text-white">
+                    One of the standout features of our bot is its global
+                    accessibility - no matter their geographic location
+                  </p>
                 </div>
               </div>
             </div>
