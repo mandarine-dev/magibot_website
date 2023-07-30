@@ -135,7 +135,7 @@ export default function Home() {
               <p className="pt-14 text-4xl leading-8 text-zinc-100 cairo">
                 HOW IT WORKS
               </p>
-              <div className="-mt-14 flex items-center h-full justify-evenly">
+              <div className="-mt-14 flex flew-wrap items-center h-full justify-evenly">
                 <div className="flex flex-col items-center w-52">
                   <img
                     className="h-24 w-14"
@@ -186,20 +186,20 @@ export default function Home() {
                 range of automated tasks across different protocols on supported
                 chains
               </p>
-              <div className="w-full flex flex-wrap justify-evenly items-center h-96">
-                <div className="flex  flex-col justify-center items-center w-56">
+              <div className="grid grid-cols-3 gap-3 w-full justify-evenly items-center h-96">
+                <div className="flex flex-col justify-center items-center">
                   <div className="flex justify-center items-center h-24 w-24 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200">
                     <p className="cairo text-white text-3xl">#1</p>
                   </div>
                   <p className="text-lg pt-4 pb-2 text-white">
-                    Private interchain network
+                    Private network
                   </p>
                   <p className="text-sm text-white">
                     We assure our users that their information is safe, and no
                     personal data related to transactions is stored
                   </p>
                 </div>
-                <div className="flex flex-col justify-center items-center w-56">
+                <div className="flex flex-col justify-center items-center">
                   <div className="flex justify-center items-center h-24 w-24 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200">
                     <p className="cairo text-white text-3xl">#2</p>
                   </div>
@@ -207,11 +207,11 @@ export default function Home() {
                     User friendly interface
                   </p>
                   <p className="text-sm text-white">
-                    Our bot is designed with simplicity and user experience in
-                    mind - all you need is a Telegram account
+                    Designed with simplicity and user experience in mind - all
+                    you need is a Telegram account
                   </p>
                 </div>
-                <div className="flex flex-col justify-center items-center w-56">
+                <div className="flex flex-col justify-center items-center">
                   <div className="flex justify-center items-center h-24 w-24 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200">
                     <p className="cairo text-white text-3xl">#3</p>
                   </div>
