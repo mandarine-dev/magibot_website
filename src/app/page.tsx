@@ -136,16 +136,19 @@ export default function Home() {
                 HOW IT WORKS
               </p>
               <div className="-mt-14 flex items-center h-full justify-evenly">
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center w-52">
                   <img
                     className="h-24 w-14"
                     src="https://i.imgur.com/16P45r7.png"
                     alt=""
                   />
                   <p className="text-lg text-white">Telegram</p>
-                  <p className="text-sm text-white">Follow instructions</p>
+                  <p className="text-sm text-white">
+                    {' '}
+                    Send your ETH to the newly generated address
+                  </p>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center w-52">
                   <img
                     className="h-24 w-auto"
                     src="https://i.imgur.com/7qqJywh.png"
@@ -153,17 +156,19 @@ export default function Home() {
                   />
                   <p className="text-lg text-white">Let the magic</p>
                   <p className="text-sm text-white">
-                    Grab a cup of tea during process
+                    The bot starts the anonymization process
                   </p>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center w-52">
                   <img
                     className="h-24 w-auto"
                     src="https://i.imgur.com/nR7P8kz.png"
                     alt=""
                   />
                   <p className="text-lg text-white">Receive</p>
-                  <p className="text-sm text-white">Get your tokens back</p>
+                  <p className="text-sm text-white">
+                    Get your tokens back, now with enhanced privacy!
+                  </p>
                 </div>
               </div>
             </div>
