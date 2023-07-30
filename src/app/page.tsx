@@ -154,7 +154,7 @@ export default function Home() {
                     src="https://i.imgur.com/7qqJywh.png"
                     alt=""
                   />
-                  <p className="text-lg text-white">Let the magic</p>
+                  <p className="text-lg text-white">Let the magic happen</p>
                   <p className="text-sm text-white">
                     The bot starts the anonymization process
                   </p>
@@ -195,8 +195,8 @@ export default function Home() {
                     Private network
                   </p>
                   <p className="text-sm text-white">
-                    We assure our users that their information is safe, and no
-                    personal data related to transactions is stored
+                    We assure our users that their information is safe, no
+                    personal data nor private key are stored
                   </p>
                 </div>
                 <div className="flex flex-col justify-center items-center">
