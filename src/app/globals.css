@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,6 +21,7 @@
 body {
   /* color: rgb(var(--foreground-rgb)); */
   /* background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb)); */
+  font-family: "Figtree", sans-serif !important;
 }
 
 .cairo {
@@ -64,4 +67,8 @@ body {
   .button-52 {
     padding: 13px 50px 13px;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
