@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     // <div className="h-screen">
-    <div className="bg-gradient-to-br from-cyan-300 to-violet-600 h-full">
+    <div className="bg-gradient-to-br from-cyan-300 to-violet-600 h-full w-full">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
@@ -93,6 +93,7 @@ export default function Home() {
                       key={item.name}
                       href={item.href}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}
                     </a>
@@ -180,7 +181,7 @@ export default function Home() {
                 range of automated tasks across different protocols on supported
                 chains
               </p>
-              <div className="w-full flex justify-evenly">
+              <div className="w-full flex justify-evenly items-center">
                 <div>
                   <div className="h-24 w-24 mt-32 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-200"></div>
                   <p className="text-lg pt-4 pb-2 text-white">1st feature</p>
@@ -292,16 +293,16 @@ export default function Home() {
                     for team
                   </div>
                 </div>
-                <div className="text-left">
+                <div className="text-left mx-12">
                   <div className="uppercase pb-4 text-purple-200">
                     Token distribution
                   </div>
                   <div className="space-y-2 pb-4">
                     <div className="text-xl font-bold">500,000</div>
                     <div>Team & Founder (5%)</div>
-                    <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                    <div className="w-full bg-violet-400 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                       <div
-                        className="bg-teal-400 h-1.5 rounded-full dark:bg-blue-500"
+                        className="bg-white h-1.5 rounded-full dark:bg-blue-500"
                         style={{ width: '5%' }}
                       ></div>
                     </div>
@@ -309,9 +310,9 @@ export default function Home() {
                   <div className="space-y-2 pb-4">
                     <div className="text-xl font-bold">500,000</div>
                     <div>CEX Listing (5%)</div>
-                    <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                    <div className="w-full bg-violet-400 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                       <div
-                        className="bg-gray-700 h-1.5 rounded-full dark:bg-blue-500"
+                        className="bg-white h-1.5 rounded-full dark:bg-blue-500"
                         style={{ width: '5%' }}
                       ></div>
                     </div>
@@ -319,9 +320,9 @@ export default function Home() {
                   <div className="space-y-2 pb-4">
                     <div className="text-xl font-bold">4,000,000</div>
                     <div>Supply added to liquidity (40%)</div>
-                    <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                    <div className="w-full bg-violet-400 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                       <div
-                        className="bg-orange-300 h-1.5 rounded-full dark:bg-blue-500"
+                        className="bg-white h-1.5 rounded-full dark:bg-blue-500"
                         style={{ width: '40%' }}
                       ></div>
                     </div>
@@ -329,9 +330,9 @@ export default function Home() {
                   <div className="space-y-2 pb-4">
                     <div className="text-xl font-bold">5,000,000</div>
                     <div>Seed (50%)</div>
-                    <div className="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-gray-700">
+                    <div className="w-full bg-violet-400 rounded-full h-1.5 mb-4 dark:bg-gray-700">
                       <div
-                        className="bg-red-400 h-1.5 rounded-full dark:bg-blue-500"
+                        className="bg-white h-1.5 rounded-full dark:bg-blue-500"
                         style={{ width: '50%' }}
                       ></div>
                     </div>
@@ -351,11 +352,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div id="faq" className="pt-14">
+            <div id="faq" className="pt-24">
               <div className="cairo text-white text-4xl pb-14">FAQs</div>
-              <div className="flex text-white text-left space-x-6">
-                <div className="w-96">
-                  <div className="font-bold pb-4">
+              <div className="text-white text-left grid">
+                <div>
+                  <div className="font-bold pb-2">
                     What is this Telegram bot?
                   </div>
                   <div>
@@ -366,8 +367,8 @@ export default function Home() {
                     address, ensuring the transaction remains anonymous.
                   </div>
                 </div>
-                <div className="w-96">
-                  <div className="font-bold  pb-4">
+                <div>
+                  <div className="font-bold pt-8 pb-2">
                     How long does a transaction take?
                   </div>
                   <div>
@@ -376,8 +377,8 @@ export default function Home() {
                     transaction is processed as quickly as possible.
                   </div>
                 </div>
-                <div className="w-96">
-                  <div className="font-bold  pb-4">
+                <div>
+                  <div className="font-bold pt-8 pb-2">
                     How do I use this service?
                   </div>
                   <div>
@@ -388,8 +389,8 @@ export default function Home() {
                     the transaction for you.
                   </div>
                 </div>
-                <div className="w-96">
-                  <div className="font-bold  pb-4">
+                <div>
+                  <div className="font-bold pt-8 pb-2">
                     What if I encounter a problem or need assistance?
                   </div>
                   <div>
