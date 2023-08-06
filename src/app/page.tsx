@@ -1,7 +1,19 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import airtable from 'airtable';
+
+// authenticate
+airtable.configure({
+  apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY,
+});
+
+// initialize a base
+const base = airtable.base(process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID || '');
+
+// reference a table
+const table = base(process.env.NEXT_PUBLIC_AIRTABLE_TABLE_NAME || '');
 
 const navigation = [
   { name: 'How it works', href: '#how' },
@@ -17,6 +29,37 @@ const navigation = [
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [volume, setVolume] = useState(0);
+  const [totalValue, setTotalValue] = useState(0);
+
+  const getData = async () => {
+    const records = await table.select({}).firstPage();
+    return records;
+  };
+
+  const getEthPrice = async () => {
+    const response = await fetch(
+      'https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD',
+    );
+    const data = await response.json();
+    return data.USD;
+  };
+
+  useEffect(() => {
+    const fetchVolumeAndValue = async () => {
+      const records = await getData();
+      const totalAmount = records.reduce(
+        (sum, record) => sum + Number(record.fields.amount),
+        0,
+      );
+      setVolume(totalAmount);
+
+      const ethPrice = await getEthPrice();
+      setTotalValue(totalAmount * ethPrice);
+    };
+
+    fetchVolumeAndValue();
+  }, []); // Le tableau vide comme deuxième argument signifie que cela s'exécutera seulement au montage du composant
 
   return (
     // <div className="h-screen">
@@ -119,7 +162,6 @@ export default function Home() {
               <a href="#" className="button-52" role="button">
                 MEET THE RABBIT
               </a>
-
               {/* <a
                 href="#"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -127,6 +169,13 @@ export default function Home() {
                 Get started
               </a> */}
             </div>
+
+            <p className="pt-24 text-lg leading-8 text-zinc-100">
+              Current beta volume
+            </p>
+            <p className="pt-2 text-5xl leading-8 text-zinc-100 cairo">
+              {totalValue?.toFixed(2) * 2}$
+            </p>
 
             <div
               id="how"
