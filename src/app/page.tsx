@@ -174,7 +174,7 @@ export default function Home() {
               Current beta volume
             </p>
             <p className="pt-2 text-5xl leading-8 text-zinc-100 cairo">
-              {totalValue?.toFixed(2) * 2}$
+              {(totalValue * 2).toFixed(2)}$
             </p>
 
             <div
