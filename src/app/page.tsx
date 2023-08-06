@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import axios from 'axios';
 import airtable from 'airtable';
 
 // authenticate
@@ -38,10 +39,10 @@ export default function Home() {
   };
 
   const getEthPrice = async () => {
-    const response = await fetch(
+    const response = await axios.get(
       'https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD',
     );
-    const data = await response.json();
+    const data = response.data;
     return data.USD;
   };
 
