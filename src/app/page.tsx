@@ -231,10 +231,8 @@ export default function Home() {
                 MAGIBOT TOP FEATURES
               </p>
               <p className="pt-6 w-2/3 text-base leading-8 text-zinc-100 ">
-                MagiBot performs a wide range of automated tasks across
-                different protocols on support ed chains MagiBot performs a wide
-                range of automated tasks across different protocols on supported
-                chains
+                Through different protocols on supported chains, MagiBot
+                conducts a comprehensive range of automated operations
               </p>
               <div className="grid grid-cols-3 gap-3 w-full justify-evenly items-center h-96">
                 <div className="flex flex-col justify-center items-center">
