@@ -231,8 +231,9 @@ export default function Home() {
                 MAGIBOT TOP FEATURES
               </p>
               <p className="pt-6 w-2/3 text-base leading-8 text-zinc-100 ">
-                Through different protocols on supported chains, MagiBot
-                conducts a comprehensive range of automated operations
+                MagiBot is creating a privacy network via a Telegram bot for
+                private transactions. Inspired by Monero and using Snark
+                technology like Noir, it leverages private address technology.
               </p>
               <div className="grid grid-cols-3 gap-3 w-full justify-evenly items-center h-96">
                 <div className="flex flex-col justify-center items-center">
