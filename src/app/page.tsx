@@ -154,14 +154,14 @@ export default function Home() {
           <div className="text-center">
             <img src="https://i.imgur.com/HsuYpCQ.png" alt="" />
             <p className="mt-12 pb-6 text-4xl leading-8 text-zinc-100 cairo">
-              HELLO, RABBITS
+              PREPARE FOR PRIVATE ALCHEMY
               <br />
-              READY FOR MAGIC?
+              IN THE MAGI REALM
               <br />
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a href="#" className="button-52" role="button">
-                MEET THE RABBIT
+                OPEN THE MYSTIC HARE
               </a>
               {/* <a
                 href="#"
