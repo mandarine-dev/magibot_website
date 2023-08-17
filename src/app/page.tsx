@@ -43,7 +43,7 @@ export default function Home() {
       'https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD',
     );
     const data = response.data;
-    return data.USD;
+    return 1900;
   };
 
   useEffect(() => {
@@ -172,10 +172,17 @@ export default function Home() {
             </div>
 
             <p className="pt-24 text-lg leading-8 text-zinc-100">
-              Current beta volume
+              Current volume (1.0-beta1)
             </p>
             <p className="pt-2 text-5xl leading-8 text-zinc-100 cairo">
               {(totalValue * 2).toFixed(2)}$
+            </p>
+
+            <p className="pt-24 text-lg leading-8 text-zinc-100">
+              Current volume (1.0-beta2)
+            </p>
+            <p className="pt-2 text-5xl leading-8 text-zinc-100 cairo">
+              Coming soon...
             </p>
 
             <div
