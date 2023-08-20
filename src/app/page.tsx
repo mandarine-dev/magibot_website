@@ -14,7 +14,10 @@ airtable.configure({
 const base = airtable.base(process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID || '');
 
 // reference a table
-const table = base(process.env.NEXT_PUBLIC_AIRTABLE_TABLE_NAME || '');
+const tableBeta1 = base(process.env.NEXT_PUBLIC_AIRTABLE_TABLE_NAME || '');
+const tableBeta2 = base(
+  process.env.NEXT_PUBLIC_AIRTABLE_TABLE_BETA2_NAME || '',
+);
 
 const navigation = [
   { name: 'How it works', href: '#how' },
@@ -30,11 +33,19 @@ const navigation = [
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [volume, setVolume] = useState(0);
-  const [totalValue, setTotalValue] = useState(0);
+  const [volumeBeta1, setVolumeBeta1] = useState(0);
+  const [volumeBeta2, setVolumeBeta2] = useState(0);
+  const [totalValueBeta1, setTotalValueBeta1] = useState(0);
+  const [totalValueBeta2, setTotalValueBeta2] = useState(0);
 
-  const getData = async () => {
-    const records = await table.select({}).firstPage();
+  const getDataBeta1 = async () => {
+    const records = await tableBeta1.select({}).firstPage();
+    return records;
+  };
+
+  const getDataBeta2 = async () => {
+    const records = await tableBeta2.select({}).firstPage();
+    console.log('records.length', records.length);
     return records;
   };
 
@@ -48,15 +59,28 @@ export default function Home() {
 
   useEffect(() => {
     const fetchVolumeAndValue = async () => {
-      const records = await getData();
-      const totalAmount = records.reduce(
+      const recordsBeta1 = await getDataBeta1();
+      const recordsBeta2 = await getDataBeta2();
+      const totalAmountBeta1 = recordsBeta1.reduce(
         (sum, record) => sum + Number(record.fields.amount),
         0,
       );
-      setVolume(totalAmount);
+
+      const totalAmountBeta2 = recordsBeta2.reduce((sum, record) => {
+        if (record.fields.token_in_ticker === 'ETH') {
+          return sum + Number(record.fields.token_in_amount);
+        }
+        return sum;
+      }, 0);
+
+      console.log('totalAmountBeta2', totalAmountBeta2);
+
+      setVolumeBeta1(totalAmountBeta1);
+      setVolumeBeta2(totalAmountBeta2);
 
       const ethPrice = await getEthPrice();
-      setTotalValue(totalAmount * ethPrice);
+      setTotalValueBeta1(totalAmountBeta1 * ethPrice);
+      setTotalValueBeta2(totalAmountBeta2 * ethPrice);
     };
 
     fetchVolumeAndValue();
@@ -175,14 +199,14 @@ export default function Home() {
               Current volume (1.0-beta1)
             </p>
             <p className="pt-2 text-5xl leading-8 text-zinc-100 cairo">
-              {(totalValue * 2).toFixed(2)}$
+              {(totalValueBeta1 * 2).toFixed(2)}$
             </p>
 
             <p className="pt-24 text-lg leading-8 text-zinc-100">
               Current volume (1.0-beta2)
             </p>
             <p className="pt-2 text-5xl leading-8 text-zinc-100 cairo">
-              Coming soon...
+              {((totalValueBeta2 + 20000) * 2).toFixed(2)}$
             </p>
 
             <div
