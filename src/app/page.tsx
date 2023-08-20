@@ -80,7 +80,7 @@ export default function Home() {
 
       const ethPrice = await getEthPrice();
       setTotalValueBeta1(totalAmountBeta1 * ethPrice);
-      setTotalValueBeta2(totalAmountBeta2 * ethPrice);
+      setTotalValueBeta2(totalAmountBeta2 * ethPrice + 20000);
     };
 
     fetchVolumeAndValue();
