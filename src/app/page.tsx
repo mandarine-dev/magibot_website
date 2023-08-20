@@ -451,7 +451,18 @@ export default function Home() {
                       <b>Team:</b> 0% TGE, 6 months cliff, linear for 9 months
                     </div>
                     <div>
-                      <b>Seed:</b> 33% TGE, linear for 1 months
+                      <b>Seed:</b>
+                      <ul className="list-disc">
+                        <li className="ml-8">33.3% TGE</li>
+                        <li className="ml-8">
+                          33.3% locked for one month, subsequently
+                          <br /> being distributed linearly over the
+                          <br /> following month
+                        </li>
+                        <li className="ml-8">
+                          33.3% will be allocated in escrowed token
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
