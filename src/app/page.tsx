@@ -206,7 +206,7 @@ export default function Home() {
               Current volume (1.0-beta2)
             </p>
             <p className="pt-2 text-5xl leading-8 text-zinc-100 cairo">
-              {((totalValueBeta2 + 20000) * 2).toFixed(2)}$
+              {(totalValueBeta2 * 2).toFixed(2)}$
             </p>
 
             <div
